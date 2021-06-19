@@ -127,19 +127,31 @@
 							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
 							<div class="timeline-panel">
 								<div class="timeline-heading">
-									<h3 class="timeline-title">Web Developer [Full-Time]</h3>
-									<span class="company">Goa Web Tech - Dec 2018 - Current</span>
+									<h3 class="timeline-title">Software Engineer [Full-Time]</h3>
+									<span class="company">Online Productivity Soluion Pvt Ltd. - Nov 2018 - Current</span>
 								</div>
 								<div class="timeline-body">
 									<p>Designing & developing websites, managing & testing websites. Developing Api's. Wordpress theme development. Custom websites and system Development.</p>
 								</div>
 							</div>
 						</li>
-						<li class="timeline-inverted animate-box">
+						<li class="animate-box timeline-inverted">
 							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
 							<div class="timeline-panel">
 								<div class="timeline-heading">
-									<h3 class="timeline-title">Web Developer (Intern)</h3>
+									<h3 class="timeline-title">Web Developer [Full-Time]</h3>
+									<span class="company">Goa Web Tech - Dec 2018 - Oct 2020</span>
+								</div>
+								<div class="timeline-body">
+									<p>Designing & developing websites, managing & testing websites. Developing Api's. Wordpress theme development. Custom websites and system Development.</p>
+								</div>
+							</div>
+						</li>
+						<li class="timeline-unverted animate-box">
+							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title">Web Developer [Intern]</h3>
 									<span class="company">National Informatics Center - Oct 2017 - Dec 2017</span>
 								</div>
 								<div class="timeline-body">
@@ -147,7 +159,7 @@
 								</div>
 							</div>
 						</li>
-						<li class="animate-box timeline-unverted">
+						<li class="animate-box timeline-inverted">
 							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
 							<div class="timeline-panel">
 								<div class="timeline-heading">
@@ -164,7 +176,7 @@
 						<li class="timeline-heading text-center animate-box">
 							<div><h3>Education</h3></div>
 						</li>
-						<li class="timeline-inverted animate-box">
+						<li class="timeline-unverted animate-box">
 							<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
 							<div class="timeline-panel">
 								<div class="timeline-heading">
@@ -176,7 +188,7 @@
 								</div>
 							</div>
 						</li>
-						<li class="animate-box timeline-unverted">
+						<li class="animate-box timeline-inverted">
 							<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
 							<div class="timeline-panel">
 								<div class="timeline-heading">
@@ -188,7 +200,7 @@
 								</div>
 							</div>
 						</li>
-						<li class="timeline-inverted animate-box">
+						<li class="timeline-unverted animate-box">
 							<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
 							<div class="timeline-panel">
 								<div class="timeline-heading">
@@ -228,7 +240,7 @@
 					<div class="chart" data-percent="89"><span><strong>PHP</strong>89%</span></div>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<div class="chart" data-percent="85"><span><strong>MySQL</strong>85%</span></div>
+					<div class="chart" data-percent="85"><span><strong>Node</strong>85%</span></div>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
 					<div class="chart" data-percent="90"><span><strong>Wordpress</strong>90%</span></div>
@@ -412,11 +424,19 @@
             var email=$('#email').val();
             var mobile=$('#mobile').val();
             var message=$('#message').val();
-            $.get("./send.php?value1="+fname+' '+lname+"&&value2="+email+' '+mobile+"&&value3="+message, function(data){
-            });
+			$.ajax({
+				url: 'https://maker.ifttt.com/trigger/Web/with/key/dryKvP2-LYkpsLUYvNPRbV',
+				type: 'POST',
+				contentType: 'application/json',
+				data: JSON.stringify({
+					value1: fname+' '+lname,
+					value2: mobile+' '+email,
+					value3: message
+				}),
+				dataType: 'json'
+			});
             $('input').val('');
             $('textarea').val('');
-
         }
     </script>
 	</body>
